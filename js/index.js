@@ -31,8 +31,10 @@ messageForm.addEventListener('submit', (event) => {
     let message = event.target.message;
     let newMessage = document.createElement('li');
 
-    newMessage.innerHTML = "<a href='mailto:" + email.value + "'>" + name.value + "</a> wrote: <span>" + message.value + "</span>   ";
+    newMessage.innerHTML = "<a href='mailto:" + email.value + "'>" + name.value + "</a><span>  wrote: " + message.value + "</span>   ";
     messageList.appendChild(newMessage);
+
+
     let removeButton = document.createElement('button');
     removeButton.innerText = "remove";
     removeButton.setAttribute("type", "button");
@@ -42,6 +44,15 @@ messageForm.addEventListener('submit', (event) => {
         messagesSectionShowHide();
     })
     newMessage.appendChild(removeButton);
+
+    let editButton = document.createElement('button');
+    editButton.innerText = "edit";
+    editButton.setAttribute("type", "button");
+    editButton.addEventListener('click', editFunc, false);
+
+    newMessage.appendChild(editButton);
+
+
     messageList.appendChild(newMessage);
 
     console.log(name.value, email.value, message.value)
@@ -63,3 +74,26 @@ function messagesSectionShowHide() {
     }
 }
 
+//editFunc
+function editFunc() {
+    let originalMsg = this.parentNode;
+    let msgList = this.parentNode.parentNode;
+    let a = this.parentNode.querySelector('a');
+    let removeBtn = this.parentNode.querySelectorAll('button')[0];
+    let editBtn = this.parentNode.querySelectorAll('button')[1];
+
+
+    let span = document.createElement('span');
+    let newMsg = prompt('Enter new message: ');
+    span.innerHTML = ' wrote: ' + newMsg + "   ";
+    let returnMsg = document.createElement('li');
+    returnMsg.appendChild(a);
+    returnMsg.appendChild(span);
+    returnMsg.appendChild(removeBtn);
+    returnMsg.appendChild(editBtn);
+    console.log(returnMsg);
+    console.log(originalMsg);
+
+    msgList.insertBefore(returnMsg, originalMsg.nextSibling);
+    originalMsg.remove();
+}
