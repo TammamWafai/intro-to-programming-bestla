@@ -1,0 +1,100 @@
+body{
+    background-color: rgba(0, 255, 255, 0.233);
+    color: rgb(0, 71, 71);
+    font-family: 'Kanit', sans-serif;
+    margin : 35px;
+    padding: 45px;
+}
+
+h1{
+    font-size: 42px;
+    font-weight: 900;
+}
+
+h2{
+    font-size: 25px;
+    font-weight: 600;
+}
+
+ul#expList{
+    /* transform-style: preserve-3d; */
+    list-style-type: square;
+    border-block: dashed rgb(175, 175, 175);
+    
+}
+
+ul#skillsList{
+    list-style-type: square;
+    border-block: dashed rgb(175, 175, 175);
+}
+
+@media screen and (max-width: 500px) {
+    ul#connectList li{
+    list-style: none;
+    align-items: center;
+    align-content: center;
+    text-align: center;    
+    margin: 20px;
+    padding: 10px;
+    border-radius: 5;
+    border-style: dashed;
+    border-color: rgba(0, 0, 0, 0.363);
+    }
+}
+@media screen and (min-width: 501px) {
+    ul#connectList li{
+    display: inline;
+    margin: 20px;
+    padding: 10px;
+    border-radius: 5;
+    border-style: dashed;
+    border-color: rgba(0, 0, 0, 0.363);
+    }
+}
+
+
+form{
+    padding: 25px;
+    background-color: rgba(0, 19, 19, 0.075);
+    border-style: dashed;
+    border-color: rgba(0, 0, 0, 0.363);
+}
+
+form > label{
+    font-size: 20px;
+    color:rgba(0, 0, 0, 0.705);
+}
+form > input,
+form > textarea{
+    font-size: 15px;
+    padding: 5px;
+    margin:5px;
+    border-style: dashed;
+}
+
+form > button{
+    background-color: rgba(0, 0, 0, 0.705);
+    padding: 20px;
+    color:white;
+    font-size: 15px;
+    border-radius: 24px;
+}
+
+#messages > ul{
+    background-color: rgba(255, 253, 253, 0.541);
+    border-radius: 25px;
+    border-style: dashed;
+}
+
+#messages > ul>li:nth-last-of-type(odd){
+    background-color: rgba(0, 0, 0, 0.137);
+}
+#messages > ul>li>button{
+    background-color: rgba(0, 0, 0, 0.562);
+    padding: 10px;
+    color:white;
+    font-size: 14px;
+    border-radius: 14px;
+    margin:10px;
+}
+
