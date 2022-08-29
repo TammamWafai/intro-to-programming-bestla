@@ -1,161 +1,171 @@
-body{
+.indented {
+    margin-left: 20px;
+    color: rgb(0, 81, 95);
+}
+
+body {
     background-color: rgba(0, 255, 255, 0.233);
     color: rgb(0, 71, 71);
     font-family: 'Kanit', sans-serif;
-   margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 body::before {
-  display:block;
-  content: '';
-  height:100px; 
-}
-section{
-    
-    margin:55px;
+    display: block;
+    content: '';
+    height: 100px;
 }
 
-h1{
+section {
+
+    margin: 55px;
+}
+
+h1 {
     font-size: 42px;
     font-weight: 900;
 }
 
-h2{
+h2 {
     font-size: 25px;
     font-weight: 600;
 }
 
-ul#expList{
+ul#expList {
     /* transform-style: preserve-3d; */
     list-style-type: none;
     border-block: dashed rgb(175, 175, 175);
     display: flex;
     flex-direction: row;
-flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-around;
-    
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+
 }
-ul#expList li{
+
+ul#expList li {
     border-color: gray;
     border-left: solid;
     flex: 1;
-        padding: 35px;
-    
+    padding: 35px;
+
 
 }
 
-ul#skillsList{
+ul#skillsList {
     list-style-type: square;
     border-block: dashed rgb(175, 175, 175);
 }
 
 @media screen and (max-width: 500px) {
-    ul#connectList li{
-    list-style: none;
-    align-items: center;
-    align-content: center;
-    text-align: center;    
-    margin: 20px;
-    padding: 10px;
-    border-radius: 5;
-    border-style: dashed;
-    border-color: rgba(0, 0, 0, 0.363);
+    ul#connectList li {
+        list-style: none;
+        align-items: center;
+        align-content: center;
+        text-align: center;
+        margin: 20px;
+        padding: 10px;
+        border-radius: 5;
+        border-style: dashed;
+        border-color: rgba(0, 0, 0, 0.363);
     }
 }
+
 @media screen and (min-width: 501px) {
-    ul#connectList li{
-    display: inline;
-    margin: 20px;
-    padding: 10px;
-    border-radius: 5;
-    border-style: dashed;
-    border-color: rgba(0, 0, 0, 0.363);
+    ul#connectList li {
+        display: inline;
+        margin: 20px;
+        padding: 10px;
+        border-radius: 5;
+        border-style: dashed;
+        border-color: rgba(0, 0, 0, 0.363);
     }
 }
 
 
-form{
+form {
     padding: 25px;
     background-color: rgba(0, 19, 19, 0.075);
     border-style: dashed;
     border-color: rgba(0, 0, 0, 0.363);
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content:  space-evenly;
+    justify-content: space-evenly;
     align-content: flex-start;
-    align-items:stretch;
+    align-items: stretch;
     display: flex;
 }
 
-form > label{
+form>label {
     flex: 1;
     font-size: 20px;
-    color:rgba(0, 0, 0, 0.705);
+    color: rgba(0, 0, 0, 0.705);
 }
-form > input,
-form > textarea{
+
+form>input,
+form>textarea {
     flex: 5;
     font-size: 15px;
     padding: 5px;
-    margin:5px;
+    margin: 5px;
     border-style: dashed;
 }
 
-form > button{
+form>button {
     background-color: rgba(0, 0, 0, 0.705);
     padding: 20px;
-    color:white;
+    color: white;
     font-size: 15px;
     border-radius: 24px;
 }
 
-#messages > ul{
+#messages>ul {
     background-color: rgba(255, 253, 253, 0.541);
     border-radius: 25px;
     border-style: dashed;
-    
+
 }
 
-#messages > ul>li:nth-last-of-type(odd){
+#messages>ul>li:nth-last-of-type(odd) {
     background-color: rgba(0, 0, 0, 0.137);
 }
-#messages > ul>li>button{
+
+#messages>ul>li>button {
     background-color: rgba(0, 0, 0, 0.562);
     padding: 10px;
-    color:white;
+    color: white;
     font-size: 14px;
     border-radius: 14px;
-    margin:10px;
+    margin: 10px;
 }
 
 ul#navMenu {
     overflow: hidden;
-  background-color: rgba(51, 51, 51, 0.514);
-  position: fixed;
-  top: 0;
-  width: 100%;
+    background-color: rgba(51, 51, 51, 0.514);
+    position: fixed;
+    top: 0;
+    width: 100%;
 
-    
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
+
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
 }
 
 ul#navMenu li {
-  float: left;
+    float: left;
 }
 
 ul#navMenu li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 16px;
-  text-decoration: none;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
 }
 
 ul#navMenu li a:hover {
-  background-color: #111111;
+    background-color: #111111;
 }
