@@ -165,4 +165,4 @@ fetch("https://api.github.com/users/TammamWafai/repos")
         }
 
     })
-    .catch((error) => console.error("ERROR, we will fix it soon!", error));
+    .catch((error) => console.error("ERROR we will fix it soon!", error));
