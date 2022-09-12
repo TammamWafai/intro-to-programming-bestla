@@ -98,39 +98,71 @@ function editFunc() {
     originalMsg.remove();
 }
 
-var githubRequest = new XMLHttpRequest();
-githubRequest.onload = function () {
-    let items = JSON.parse(githubRequest.responseText);
-    let ulElement = document.getElementById('projectsUL');
+// var githubRequest = new XMLHttpRequest();
+// githubRequest.onload = function () {
+//     let items = JSON.parse(githubRequest.responseText);
+//     let ulElement = document.getElementById('projectsUL');
 
-    for (let i = 0; i < items.length; i++) {
+//     for (let i = 0; i < items.length; i++) {
 
-        let liElement = document.createElement('li');
-        let urlElement = document.createElement('a');
-        urlElement.setAttribute('href', items[i].html_url);
-        urlElement.innerHTML = items[i].name;
-        liElement.appendChild(urlElement);
-        if (items[i].description) {
-            let desc = document.createElement('h6');
-            desc.innerHTML = `Description: ${items[i].description}`;
-            desc.classList.add('indented');
-            liElement.appendChild(desc);
+//         let liElement = document.createElement('li');
+//         let urlElement = document.createElement('a');
+//         urlElement.setAttribute('href', items[i].html_url);
+//         urlElement.innerHTML = items[i].name;
+//         liElement.appendChild(urlElement);
+//         if (items[i].description) {
+//             let desc = document.createElement('h6');
+//             desc.innerHTML = `Description: ${items[i].description}`;
+//             desc.classList.add('indented');
+//             liElement.appendChild(desc);
+//         }
+//         if (items[i].created_at) {
+//             let createdAt = document.createElement('h6');
+//             createdAt.innerHTML = `Created at: ${items[i].created_at}`;
+//             createdAt.classList.add('indented');
+//             liElement.appendChild(createdAt);
+//         }
+
+
+
+//         ulElement.appendChild(liElement);
+//     }
+
+
+// };
+// githubRequest.open("GET", "https://api.github.com/users/TammamWafai/repos");
+// githubRequest.send();
+
+
+fetch("https://api.github.com/users/TammamWafai/repos")
+    .then((response) => response.json())
+    .then((items) => {
+        let ulElement = document.getElementById('projectsUL');
+
+        for (let i = 0; i < items.length; i++) {
+
+            let liElement = document.createElement('li');
+            let urlElement = document.createElement('a');
+            urlElement.setAttribute('href', items[i].html_url);
+            urlElement.innerHTML = items[i].name;
+            liElement.appendChild(urlElement);
+            if (items[i].description) {
+                let desc = document.createElement('h6');
+                desc.innerHTML = `Description: ${items[i].description}`;
+                desc.classList.add('indented');
+                liElement.appendChild(desc);
+            }
+            if (items[i].created_at) {
+                let createdAt = document.createElement('h6');
+                createdAt.innerHTML = `Created at: ${items[i].created_at}`;
+                createdAt.classList.add('indented');
+                liElement.appendChild(createdAt);
+            }
+
+
+
+            ulElement.appendChild(liElement);
         }
-        if (items[i].created_at) {
-            let createdAt = document.createElement('h6');
-            createdAt.innerHTML = `Created at: ${items[i].created_at}`;
-            createdAt.classList.add('indented');
-            liElement.appendChild(createdAt);
-        }
 
-
-
-        ulElement.appendChild(liElement);
-        console.log(items[i].name);
-    }
-
-
-};
-githubRequest.open("GET", "https://api.github.com/users/TammamWafai/repos");
-githubRequest.send();
-
+    })
+    .catch((error) => console.error("ERROR, we will fix it soon!", error));
