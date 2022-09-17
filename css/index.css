@@ -1,3 +1,30 @@
+#profilePic {
+
+    margin: 5px;
+    margin-left: 20px;
+    border-radius: 50%;
+    border: 1px solid;
+    border-color: white;
+    width: 50px;
+}
+
+#profilePic:hover {
+    width: 75%;
+    align-self: center;
+}
+
+
+#projectsUL li {
+    border-radius: 1%;
+    border: 5px solid white;
+}
+
+#projectsUL li:hover {
+    font-size: 25px;
+    background-color: rgba(0, 0, 0, 0.26);
+    padding: 25px;
+}
+
 .indented {
     margin-left: 20px;
     color: rgb(0, 81, 95);
@@ -70,6 +97,7 @@ ul#skillsList {
         border-style: dashed;
         border-color: rgba(0, 0, 0, 0.363);
     }
+
 }
 
 @media screen and (min-width: 501px) {
